@@ -1,7 +1,7 @@
 # coding:utf8
 # taochengwei <staugur@saintic.com> @2016-09-21
 
-__version__ = '0.2'
+__version__ = '0.3'
 __doc__     = 'request url for json type'
 
 import json, httplib, urllib, logging
@@ -26,11 +26,11 @@ class Requests:
 
     '''Request API URL type RESTful, return the dictionary data'''
 
-    def __init__(self, url=None, timeout=5):
+    def __init__(self, url=None, timeout=5, headers=None):
 
         self.url     = url
         self.timeout = timeout
-        self.headers = {"User-Agent": "SimpleRequestsAgent"}
+        self.headers = headers or {"User-Agent": "SimpleRequestsAgent"}
         self.jsonde  = json.JSONDecoder()
         self.jsonen  = json.JSONEncoder()
 
