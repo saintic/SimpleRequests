@@ -1,10 +1,15 @@
 # coding:utf8
-# taochengwei <staugur@saintic.com> @2016-09-13
+# taochengwei <staugur@saintic.com> @2016-09-21
 
-__version__ = '0.1'
+__version__ = '0.2'
 __doc__     = 'request url for json type'
 
-import json, httplib, urllib, urlparse, logging
+import json, httplib, urllib, logging
+try:
+    import urlparse
+except ImportError:
+    from urllib.parse import urlparse
+
 
 logging.basicConfig(
             format='%(asctime)s %(levelname)s %(message)s',
@@ -59,7 +64,6 @@ class Requests:
             server = netloc[0]
             port   = 443 if scheme == 'https' else 80
 
-        #print server,port,uri,headers
         try:
             if scheme == 'https':
                 httpClient = httplib.HTTPSConnection(host=server, port=port, timeout=timeout)
@@ -100,7 +104,6 @@ class Requests:
             server = netloc[0]
             port   = 443 if scheme == 'https' else 80
 
-        #print server,port,uri,headers,data
         try:
             if scheme == 'https':
                 httpClient = httplib.HTTPSConnection(host=server, port=port, timeout=timeout)
@@ -141,7 +144,6 @@ class Requests:
             server = netloc[0]
             port   = 443 if scheme == 'https' else 80
 
-        #print server,port,uri,headers,data
         try:
             if scheme == 'https':
                 httpClient = httplib.HTTPSConnection(host=server, port=port, timeout=timeout)
@@ -182,7 +184,6 @@ class Requests:
             server = netloc[0]
             port   = 443 if scheme == 'https' else 80
 
-        #print server,port,uri,headers,data
         try:
             if scheme == 'https':
                 httpClient = httplib.HTTPSConnection(host=server, port=port, timeout=timeout)

@@ -3,7 +3,7 @@
 from SimpleRequests import __version__, __doc__
 
 try:
-    from setuptools import setup, find_packages
+    from setuptools import setup
 except ImportError:
     print "Install it using your package manager (usually python-setuptools) or via pip (pip install setuptools)."
     exit(127)
@@ -16,9 +16,8 @@ setup(
     author_email = 'staugur@saintic.com',
     keywords = "requests, url, RESTful API",
     url = 'https://github.com/saintic/SimpleRequests',
-    download_url = 'https://github.com/saintic/SimpleRequests/releases/tag/v0.1',
+    download_url = 'https://github.com/saintic/SimpleRequests/releases/tag/v%s' %__version__,
     license = "MIT",
-    packages = find_packages(),
     py_modules = [ 'SimpleRequests',],
     classifiers = [
         'Environment :: Other Environment',

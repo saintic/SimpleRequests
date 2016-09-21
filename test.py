@@ -23,16 +23,16 @@ class RequestsTest(unittest.TestCase):
 
     def test_post(self):
         t1 = self.req1.post(self.url3, data='')
-        print t1
+        print(t1)
 
     def test_put(self):
         t1 = self.req1.put(self.url)
-        print t1
+        print(t1)
 
     '''
     def test_delete(self):
         t1 = self.req1.delete('http://api.saintic.com/blog')
-        print t1
+        print(t1)
     '''
 
 if __name__ == '__main__':
